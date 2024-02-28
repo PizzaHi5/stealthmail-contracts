@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.24;
 
-contract Counter {
-    uint256 public number;
+import "./interfaces/INode.sol";
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
+// Should be an INode
+contract node_sample {
+    function GenerateReport() external returns(INode.UserReport[] calldata reports) {}
 
-    function increment() public {
-        number++;
-    }
+    function GetSpamScore(address user) external view returns(uint256 score) {}
+
+    function GetActivity(address user) external view returns(uint256 sent, uint256 recieved){}
+
+    function StakeToProtocol(uint256 amount) external{}
 }
