@@ -5,7 +5,7 @@ import "./interfaces/INode.sol";
 
 // Should be an INode
 contract node_sample {
-    function GenerateReport() external returns(INode.UserReport[] calldata reports) {}
+    function GenerateReport() external returns(INode.UserReport[] memory reports) {}
 
     function GetSpamScore(address user) external view returns(uint256 score) {}
 
